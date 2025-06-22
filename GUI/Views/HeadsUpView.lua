@@ -228,7 +228,7 @@ function headsUpView:Create()
     ---@field Momentum Texture
     ---@field SecondWind Frame
     ---@field WhirlingSurge Frame
-    local w = CreateFrame('Frame', nil, UIParent)
+    local w = CreateFrame('Frame', "RideTheWindHeadsUpView", UIParent)
     w:SetWidth(512)
     w:SetHeight(256)
     w:SetScale(0.60 * scale)
