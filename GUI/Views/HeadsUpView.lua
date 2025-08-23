@@ -228,7 +228,7 @@ function headsUpView:Create()
     ---@field Momentum Texture
     ---@field SecondWind Frame
     ---@field WhirlingSurge Frame
-    local w = CreateFrame('Frame', nil, UIParent)
+    local w = CreateFrame('Frame', "RideTheWindHeadsUpView", UIParent)
     w:SetWidth(512)
     w:SetHeight(256)
     w:SetScale(0.60 * scale)
@@ -266,7 +266,7 @@ function headsUpView:Create()
             local cdLeft = GetTime() - spellCharges.cooldownStartTime
             local currentChargeCD = (self.data.cooldowns.secondWind.cooldown / 3) - cdLeft
 
-            local missingCharges = max - (spellCharges.currentCharges + 1)
+            local missingCharges = spellCharges.maxCharges - (spellCharges.currentCharges + 1)
             local missingChargeCD = (self.data.cooldowns.secondWind.cooldown / 3) * missingCharges
 
             local currentCD = missingChargeCD + currentChargeCD
@@ -284,7 +284,7 @@ function headsUpView:Create()
             self.data.cooldowns.secondWind.usedCharge = false
         end
         local cooldown = self.data.cooldowns.secondWind.currentCooldown
-        local max = self.data.cooldowns.secondWind.cooldown
+        local maxCooldown = self.data.cooldowns.secondWind.cooldown
         if cooldown then
             self.data.cooldowns.secondWind.currentCooldown = cooldown - elapsed
 
@@ -297,7 +297,7 @@ function headsUpView:Create()
 
             local num = self.data.cooldowns.secondWind.cooldown -
                 self.data.cooldowns.secondWind.currentCooldown
-            local perc = num / max * 100
+            local perc = num / maxCooldown * 100
             self.data.view.SecondWind:SetAlpha(1)
             self.data.view.SecondWind.bar:SetSmoothedValue(perc)
         else
@@ -348,7 +348,7 @@ function headsUpView:Create()
     end)
     ws:SetScript('OnUpdate', function(_, elapsed)
         local cooldown = self.data.cooldowns.whirlingSurge.currentCooldown
-        local max = self.data.cooldowns.whirlingSurge.cooldown
+        local maxCooldown = self.data.cooldowns.whirlingSurge.cooldown
         if cooldown then
             self.data.cooldowns.whirlingSurge.currentCooldown = cooldown - elapsed
 
@@ -359,7 +359,7 @@ function headsUpView:Create()
                 return
             end
 
-            local perc = self.data.cooldowns.whirlingSurge.currentCooldown / max * 100
+            local perc = self.data.cooldowns.whirlingSurge.currentCooldown / maxCooldown * 100
             self.data.view.WhirlingSurge:SetAlpha(1)
             self.data.view.WhirlingSurge.bar:SetSmoothedValue(perc)
         else
