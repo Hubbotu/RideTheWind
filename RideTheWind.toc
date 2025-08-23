@@ -1,8 +1,8 @@
-## Interface: 110000
+## Interface: 110200
 ## Title: Ride The Wind
 ## Notes: Skyriding Racing Companion
 ## Authors: Sel
-## Version: 1.0.0
+## Version: 11.2.0
 ## IconTexture: Interface\AddOns\RideTheWind\Media\logo
 ## SavedVariables: RideTheWindDB
 ## X-Curse-Project-ID: 969233

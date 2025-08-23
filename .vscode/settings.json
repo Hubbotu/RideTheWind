@@ -1,33 +1,15 @@
 {
     "Lua.diagnostics.globals": [
-        "Mixin",
         "SmoothStatusBarMixin",
         "UIParent",
-        "CreateFrame",
-        "GetTime",
-        "C_Timer",
-        "C_PlayerInfo",
-        "C_UnitAuras",
-        "IsFlying",
-        "UnitPowerBarID",
-        "C_UIWidgetManager",
-        "max",
         "GameTooltip",
-        "C_Map",
-        "C_SuperTrack",
-        "UiMapPoint",
-        "UnitName",
-        "GetZoneText",
-        "GetAchievementInfo",
-        "C_DateAndTime",
-        "C_Calendar",
-        "C_CurrencyInfo",
-        "IsShiftKeyDown"
+        "UiMapPoint"
     ],
     "Lua.diagnostics.disable": [
         "inject-field",
         "param-type-mismatch",
-        "duplicate-set-field"
+        "duplicate-set-field",
+        "assign-type-mismatch"
     ],
     "Lua.runtime.version": "Lua 5.1",
     "Lua.runtime.builtin": {
@@ -42,6 +24,6 @@
         "utf8": "disable"
     },
     "Lua.workspace.library": [
-        "~/.vscode/extensions/ketho.wow-api-0.16.8/Annotations"
+        "~/.vscode/extensions/ketho.wow-api-0.21.0/Annotations/Core"
     ]
 }
